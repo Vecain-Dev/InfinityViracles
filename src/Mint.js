@@ -1,27 +1,152 @@
-import logo from './logo.svg';
-import './App.css';
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from './components/Header'
-import Footer from './components/Footer'  
-import { Link } from 'react-router-dom';
+import Footer from './components/Footer'
+import Navbar from './components/Navbar'
+import { Link } from 'react-router-dom'
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
+import SlideshowWithPagination from "react-slideshow-with-pagination";
 
-const App = ()=>  {
-  return (
-    <>
 
-      <div className="wrapper">
-        <Header />
-        <section className="first">
-          <div className="decor-2">
-          </div>
-          <div className="container">
-            <div className="first_wrapper">
-              <div className="first_wrapper--text">
-                <img src="assets/images/mark.png" className="d-hide top-d" alt="" />
-                <div>
-                  <ul>
-                    <li>
-                      <svg width="52" height="56" viewBox="0 0 52 56" fill="none">
+const CARDS_DETAILS = [
+  { image: './assets/images/jeans (60).png', title: "1" },
+  { image: './assets/images/jeans (60).png', title: "2" },
+  { image: './assets/images/jeans (60).png', title: "3" },
+  { image: './assets/images/jeans (60).png', title: "4" },
+  { image: './assets/images/jeans (60).png', title: "5" },
+  { image: './assets/images/jeans (60).png', title: "6" },
+  { image: './assets/images/jeans (60).png', title: "7" },
+  { image: './assets/images/jeans (60).png', title: "8" },
+]
+
+const assets = [
+      {
+        image: '12.png', attribute :  { 
+        BG: 'BG1',
+        Cap: 'party',
+        Head: 'YelloRight',
+        Horn: 'greanligo',
+        Jeans: 'light',
+        Shirt: 'abri',
+        Shoes: 'cape',
+        Tail: 'rong',
+      },
+    },{
+          image: '12.png', attribute :  { 
+            BG: 'BG1',
+          Cap: 'party',
+          Head: 'YelloRight',
+          Horn: 'greanligo',
+          Jeans: 'light',
+          Shirt: 'abri',
+          Shoes: 'cape',
+          Tail: 'rong',
+        },
+      },{
+          image: '12.png', attribute :  { BG: 'BG1',
+          Cap: 'party',
+          Head: 'YelloRight',
+          Horn: 'greanligo',
+          Jeans: 'light',
+          Shirt: 'abri',
+          Shoes: 'cape',
+          Tail: 'rong',
+        },
+      },
+      {
+        image: '12.png', attribute :  { BG: 'BG1',
+        Cap: 'party',
+        Head: 'YelloRight',
+        Horn: 'greanligo',
+        Jeans: 'light',
+        Shirt: 'abri',
+        Shoes: 'cape',
+        Tail: 'rong',
+      },
+    },{
+          image: '12.png', attribute :  { BG: 'BG1',
+          Cap: 'party',
+          Head: 'YelloRight',
+          Horn: 'greanligo',
+          Jeans: 'light',
+          Shirt: 'abri',
+          Shoes: 'cape',
+          Tail: 'rong',
+        },
+      },{
+          image: '12.png', attribute :  { BG: 'BG1',
+          Cap: 'party',
+          Head: 'YelloRight',
+          Horn: 'greanligo',
+          Jeans: 'light',
+          Shirt: 'abri',
+          Shoes: 'cape',
+          Tail: 'rong',
+        },
+      },{
+        image: '12.png', attribute :  { BG: 'BG1',
+        Cap: 'party',
+        Head: 'YelloRight',
+        Horn: 'greanligo',
+        Jeans: 'light',
+        Shirt: 'abri',
+        Shoes: 'cape',
+        Tail: 'rong',
+      },
+    },
+  
+];
+
+const Mint = () => {
+    const [input, setInput] = useState(1);
+    const price = 1000;
+
+    const responsive = {
+      1200: { items: 4 },
+      900: { items: 3 },
+      600: { items: 2 },
+      300: { items: 1 },
+      0: { items: 1 },
+    }
+
+    const increase = () => {
+      if (input < 10) {
+        setInput(input + 1);
+      }
+    };
+  
+    const decrease = () => {
+      if (input > 1) {
+        setInput(input - 1);
+      }
+    };
+  
+    const getmax = () => {
+      setInput(10);
+    };
+
+    // const [assets, setAssets] = useState(assets);
+
+    return (
+        <div className="mint-page">
+            <div className="header">
+                <div className="container">
+                    <div className="logo">
+                        <Link to='/'>
+                            <img src="assets/images/mark.png" className="d-hide top-d" alt="" />
+                        </Link>
+                    </div>
+                    <Navbar /> 
+                    <div className="menu-bar">
+                       <ul>
+                           <li>
+                            <Link to='/'>HOME</Link>
+                           </li>
+                           <li><a href="#mint">MINT</a></li>
+                           <li><a href="#assets">ASSETS</a></li>
+                           {/* <li><a>WALLET CONNCECT</a></li> */}
+                       </ul>
+                       <svg width="52" height="56" viewBox="0 0 52 56" fill="none">
                         <a target="_blank">
                           <g filter="url(#filter0_d_71:6434)">
                             <circle cx="26" cy="26" r="26" fill="#9CB0FF" />
@@ -54,9 +179,6 @@ const App = ()=>  {
                           </defs>
                         </a>
                       </svg>
-
-                    </li>
-                    <li>
                       <svg width="52" height="56" viewBox="0 0 52 56" fill="none">
                         <a target="_blank">
                           <g filter="url(#filter0_d_183:24)">
@@ -80,220 +202,87 @@ const App = ()=>  {
                           </defs>
                         </a>
                       </svg>
-                    </li>
-                  </ul>
+                      <span className="wallet-connect">wallet connect</span>
+                    </div>
+                </div> 
+            </div>
+            <section className="mint" id="mint">
+               <div className="section-title">
+                  <span></span>Mint<span></span>
                 </div>
-                {/* <br> */}
-                < Link to="/mint" className="btn">Mint</Link>
-              </div>
-            </div>
-            <div className="decor-1">
-            </div>
-          </div>
-        </section>
-      </div>
-      <section className="lore" id="lore">
-        <div className="container">
-          <h2>The lore <span></span></h2>
-          <p className="f-p">
-            1500 pretty dragons live in a beautiful and peaceful village.
-            One day, they noticed that the VMonsters will attack their village to plunder ViraCoins  
-            that is the treasure of their village. So, they appear as the Viracles-miracle soldiers against the VMonsters's plunder!
-            To prevent the invasion of the enemy, Viracles mine ViraCoins and start conscription.
-          </p>
-
-
-        </div>
-      </section>
-      <section className="about" id="about">
-        <div className="container">
-          <div className="about_wrapper">
-            <div className="about_wrapper--text">
-              <h2>About <span></span></h2>
-              <p>InfinityViracles NFT has imagined the 2D artwork & designed 10,000 unique NFTs to suit Vechain's modern & ever-expanding ecosystem!</p>
-              <p>
-                It is a friendly metaverse with 10,000 base characters where players can own land, collect, and battle between Viracles and VMonsters.
-                Players will gain rewards in the form of $VIRC tokens & unique NFT Cards.
-              </p>
-              <p>
-                NFT holders can traid their NFTs on BlackVeMarket (<a href="http://www.blackvemarket.com/">http://www.blackvemarket.com/</a>).
-                Also, Viracles NFT holders can stake NFTs to earn ViraCoins $VIRC.
-              </p>
-            </div>
-          </div>
-        </div>
-        {/* <img src="img/about-blick.png" alt="" className="about-decor-right " /> */}
-      </section>
-      <section className="roadmap" id="roadmap">
-        <div className="container">
-          <h2>Roadmap</h2>
-          <div className="roadmap_wrapper">
-            <div className="roadmap_wrapper--item">
-              <h3>Q1 2022</h3>
-              <ul>
-                <li>Complete building Discrd server</li>
-                <li>WebSite Launch</li>
-                <li>First Minting ( 1500 Viracles) </li>
-                <li>Launch $VIRC token</li>
-                <li>Viracles NFT staking Launch</li>
-                <li>Second Minting ( with $VIRC )</li>
-              </ul>
-              <div>
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M18.125 9.375H17.1812C17.0298 7.68715 16.2905 6.10609 15.0922 4.90781C13.8939 3.70953 12.3128 2.97016 10.625 2.81875V1.875H9.375V2.81875C7.68715 2.97016 6.10609 3.70953 4.90781 4.90781C3.70953 6.10609 2.97016 7.68715 2.81875 9.375H1.875V10.625H2.81875C2.97016 12.3128 3.70953 13.8939 4.90781 15.0922C6.10609 16.2905 7.68715 17.0298 9.375 17.1812V18.125H10.625V17.1812C12.3128 17.0298 13.8939 16.2905 15.0922 15.0922C16.2905 13.8939 17.0298 12.3128 17.1812 10.625H18.125V9.375ZM15.925 9.375H14.3188C14.1822 8.44395 13.7491 7.58174 13.0837 6.91634C12.4183 6.25094 11.5561 5.81782 10.625 5.68125V4.075C11.9814 4.21894 13.2474 4.82359 14.2119 5.78808C15.1764 6.75258 15.7811 8.01861 15.925 9.375ZM9.375 4.075V5.68125C8.44395 5.81782 7.58174 6.25094 6.91634 6.91634C6.25094 7.58174 5.81782 8.44395 5.68125 9.375H4.075C4.21894 8.01861 4.82359 6.75258 5.78808 5.78808C6.75258 4.82359 8.01861 4.21894 9.375 4.075ZM4.075 10.625H5.68125C5.81782 11.5561 6.25094 12.4183 6.91634 13.0837C7.58174 13.7491 8.44395 14.1822 9.375 14.3188V15.925C8.01861 15.7811 6.75258 15.1764 5.78808 14.2119C4.82359 13.2474 4.21894 11.9814 4.075 10.625ZM10.625 15.925V14.3188C11.5561 14.1822 12.4183 13.7491 13.0837 13.0837C13.7491 12.4183 14.1822 11.5561 14.3188 10.625H15.925C15.7811 11.9814 15.1764 13.2474 14.2119 14.2119C13.2474 15.1764 11.9814 15.7811 10.625 15.925Z"
-                    fill="#DBB8FF" />
-                </svg>
-              </div>
-            </div>
-            <div className="roadmap_wrapper--item">
-              <h3>Q2 2022</h3>
-              <ul>
-                <li>VMonsters NFT launch</li>
-                <li>Beta Launch of Viracles Game</li>
-                <li>Official launch Viracles Game</li>
-              </ul>
-              <div>
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M18.125 9.375H17.1812C17.0298 7.68715 16.2905 6.10609 15.0922 4.90781C13.8939 3.70953 12.3128 2.97016 10.625 2.81875V1.875H9.375V2.81875C7.68715 2.97016 6.10609 3.70953 4.90781 4.90781C3.70953 6.10609 2.97016 7.68715 2.81875 9.375H1.875V10.625H2.81875C2.97016 12.3128 3.70953 13.8939 4.90781 15.0922C6.10609 16.2905 7.68715 17.0298 9.375 17.1812V18.125H10.625V17.1812C12.3128 17.0298 13.8939 16.2905 15.0922 15.0922C16.2905 13.8939 17.0298 12.3128 17.1812 10.625H18.125V9.375ZM15.925 9.375H14.3188C14.1822 8.44395 13.7491 7.58174 13.0837 6.91634C12.4183 6.25094 11.5561 5.81782 10.625 5.68125V4.075C11.9814 4.21894 13.2474 4.82359 14.2119 5.78808C15.1764 6.75258 15.7811 8.01861 15.925 9.375ZM9.375 4.075V5.68125C8.44395 5.81782 7.58174 6.25094 6.91634 6.91634C6.25094 7.58174 5.81782 8.44395 5.68125 9.375H4.075C4.21894 8.01861 4.82359 6.75258 5.78808 5.78808C6.75258 4.82359 8.01861 4.21894 9.375 4.075ZM4.075 10.625H5.68125C5.81782 11.5561 6.25094 12.4183 6.91634 13.0837C7.58174 13.7491 8.44395 14.1822 9.375 14.3188V15.925C8.01861 15.7811 6.75258 15.1764 5.78808 14.2119C4.82359 13.2474 4.21894 11.9814 4.075 10.625ZM10.625 15.925V14.3188C11.5561 14.1822 12.4183 13.7491 13.0837 13.0837C13.7491 12.4183 14.1822 11.5561 14.3188 10.625H15.925C15.7811 11.9814 15.1764 13.2474 14.2119 14.2119C13.2474 15.1764 11.9814 15.7811 10.625 15.925Z"
-                    fill="#DBB8FF" />
-                </svg>
-              </div>
-            </div>
-            <div className="roadmap_wrapper--item">
-              <h3>Q3 2022</h3>
-              <ul>
-                <li>We will update you soon!</li>
-              </ul>
-              <div>
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M18.125 9.375H17.1812C17.0298 7.68715 16.2905 6.10609 15.0922 4.90781C13.8939 3.70953 12.3128 2.97016 10.625 2.81875V1.875H9.375V2.81875C7.68715 2.97016 6.10609 3.70953 4.90781 4.90781C3.70953 6.10609 2.97016 7.68715 2.81875 9.375H1.875V10.625H2.81875C2.97016 12.3128 3.70953 13.8939 4.90781 15.0922C6.10609 16.2905 7.68715 17.0298 9.375 17.1812V18.125H10.625V17.1812C12.3128 17.0298 13.8939 16.2905 15.0922 15.0922C16.2905 13.8939 17.0298 12.3128 17.1812 10.625H18.125V9.375ZM15.925 9.375H14.3188C14.1822 8.44395 13.7491 7.58174 13.0837 6.91634C12.4183 6.25094 11.5561 5.81782 10.625 5.68125V4.075C11.9814 4.21894 13.2474 4.82359 14.2119 5.78808C15.1764 6.75258 15.7811 8.01861 15.925 9.375ZM9.375 4.075V5.68125C8.44395 5.81782 7.58174 6.25094 6.91634 6.91634C6.25094 7.58174 5.81782 8.44395 5.68125 9.375H4.075C4.21894 8.01861 4.82359 6.75258 5.78808 5.78808C6.75258 4.82359 8.01861 4.21894 9.375 4.075ZM4.075 10.625H5.68125C5.81782 11.5561 6.25094 12.4183 6.91634 13.0837C7.58174 13.7491 8.44395 14.1822 9.375 14.3188V15.925C8.01861 15.7811 6.75258 15.1764 5.78808 14.2119C4.82359 13.2474 4.21894 11.9814 4.075 10.625ZM10.625 15.925V14.3188C11.5561 14.1822 12.4183 13.7491 13.0837 13.0837C13.7491 12.4183 14.1822 11.5561 14.3188 10.625H15.925C15.7811 11.9814 15.1764 13.2474 14.2119 14.2119C13.2474 15.1764 11.9814 15.7811 10.625 15.925Z"
-                    fill="#DBB8FF" />
-                </svg>
-              </div>
-            </div>
-            <div className="roadmap_wrapper--item">
-              <h3>Q4 2022</h3>
-              <ul>
-                <li>We will update you soon!</li>
-              </ul>
-              <div>
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M18.125 9.375H17.1812C17.0298 7.68715 16.2905 6.10609 15.0922 4.90781C13.8939 3.70953 12.3128 2.97016 10.625 2.81875V1.875H9.375V2.81875C7.68715 2.97016 6.10609 3.70953 4.90781 4.90781C3.70953 6.10609 2.97016 7.68715 2.81875 9.375H1.875V10.625H2.81875C2.97016 12.3128 3.70953 13.8939 4.90781 15.0922C6.10609 16.2905 7.68715 17.0298 9.375 17.1812V18.125H10.625V17.1812C12.3128 17.0298 13.8939 16.2905 15.0922 15.0922C16.2905 13.8939 17.0298 12.3128 17.1812 10.625H18.125V9.375ZM15.925 9.375H14.3188C14.1822 8.44395 13.7491 7.58174 13.0837 6.91634C12.4183 6.25094 11.5561 5.81782 10.625 5.68125V4.075C11.9814 4.21894 13.2474 4.82359 14.2119 5.78808C15.1764 6.75258 15.7811 8.01861 15.925 9.375ZM9.375 4.075V5.68125C8.44395 5.81782 7.58174 6.25094 6.91634 6.91634C6.25094 7.58174 5.81782 8.44395 5.68125 9.375H4.075C4.21894 8.01861 4.82359 6.75258 5.78808 5.78808C6.75258 4.82359 8.01861 4.21894 9.375 4.075ZM4.075 10.625H5.68125C5.81782 11.5561 6.25094 12.4183 6.91634 13.0837C7.58174 13.7491 8.44395 14.1822 9.375 14.3188V15.925C8.01861 15.7811 6.75258 15.1764 5.78808 14.2119C4.82359 13.2474 4.21894 11.9814 4.075 10.625ZM10.625 15.925V14.3188C11.5561 14.1822 12.4183 13.7491 13.0837 13.0837C13.7491 12.4183 14.1822 11.5561 14.3188 10.625H15.925C15.7811 11.9814 15.1764 13.2474 14.2119 14.2119C13.2474 15.1764 11.9814 15.7811 10.625 15.925Z"
-                    fill="#DBB8FF" />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="team" id="team">
-        <div className="container">
-          <h2>Team</h2>
-          <div className="team_wrapper">
-            <div className="team_wrapper--item">
-              <img src="assets/images/t-1.png" className="" alt="" />
-              <div>
-                <div className="tw-item-info">
-                  <span>Founder & Marketer</span>
-                  <h3>Murtagh</h3>
-                  <p>(Discord: Murtagh#6636)</p>
+                <div className="mint-wrapper">
+                    <div className="row">
+                        <div className="col-md-6">
+                           <div className="mint-img">
+                               <img className="img-responsive" src="assets/images/about.gif" />
+                           </div>
+                        </div>
+                        <div className="col-md-6 mint-outer">
+                          <div className="mint-wrap">
+                            <div className="token-available-wrap">
+                              <div className="available-wrap">
+                                <span>avalilable</span> <span className="mint-count">10000 / 10000</span>
+                              </div>
+                              {/* <div className="price-wrap">
+                                  <button className="btn-decrease" onClick={decrease}> - </button>
+                                  <span>{input}</span>
+                                  <button className="btn-decrease" onClick={increase}> + </button>  
+                              </div>
+                              <div className="price-value">
+                                <span>price : </span><span>{input * price} VET</span>
+                              </div> */}
+                            </div>
+                            {/* <button className="btn-common">mint</button> */}
+                            <div className='mint-date'>
+                                  First Mint Date: 26th of Febrary 2022 12 UTC + 0</div>
+                          </div>
+                        </div>
+                    </div>
                 </div>
-                <div></div>
-
-
+            </section>
+            <section className="assets" id="assets">
+              <div className="section-title">
+                <span></span>Your assets<span></span>
               </div>
-            </div>
-            <div className="team_wrapper--item">
-              <img src="assets/images/t-2.png" alt="" className="" />
-              <div>
-
-                <div className="tw-item-info">
-                  <span>Founder & Project Manager</span>
-                  <h3>Winter</h3>
-                  <p>(Discord: winter#9944)</p>
-                </div>
-                
-              </div>
+              <div className="container">
               
-            </div>
-            <div className="team_wrapper--item">
-              <img src="assets/images/t-3.png" className="" alt="" />
-              <div>
-
-                <div className="tw-item-info">
-                  <span>Founder & Community</span>
-                  <h3>Cryptovs Babylon</h3>
-                  <p>(Discord: Cryptovs Babylon#0420)</p>
+                <div className="assets-list">
+                  <div className="no-assets" >You should first connect to wallet.</div>
+                {/* <AliceCarousel 
+                  mouseTracking
+                   responsive={responsive}
+                    // disableDotsControls
+                    disableButtonsControls
+                >
+                    {assets.map((asset, idx) => 
+                      <div className="assets-item">
+                        <div className="assets-info-wrap">
+                          <div className="assets-img-wrap">
+                            <img className="img-responsive" src={"assets/images/" + asset.image} />
+                          </div>
+                          <div className="assets-info">
+                                <p className="text-cente ai-title">Attributes</p>
+                                {Object.entries(asset.attribute).map(([key, value]) => 
+                                  <p><span>{key}:</span><span>{value}</span></p>
+                                )}
+                          </div>
+                        </div>
+                        <div className="item-name">InfinityViracles#800{idx}</div>
+                        <div className="transfer-outer">
+                          <div className="transfer-wrap">
+                              <input type="text" className="" defaultValue=""/>
+                              <button>transfer</button>
+                          </div>       
+                        </div>
+                      </div>
+                    )}
+                  </AliceCarousel>     */}
                 </div>
-              
-
               </div>
-            
-            </div>
-            <div className="team_wrapper--item">
-              <img src="assets/images/t-4.png" className="" alt="" />
-              <div>
-
-                <div className="tw-item-info">
-                  <span>Server Manager</span>
-                  <h3>Raj Patel</h3>
-                  <p>(Discord: ! Raj Patel#6920)</p>
-                </div>
-              
-
-              </div>
-            
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="faq" id="faq">
-        <div className="container">
-          <h2>FAQ</h2>
-          <div className="faq_wrapper">
-            <div className="faq_wrapper--item">
-              <h3>1. What is ViraCoins ? </h3>
-              <p>Viracoins will be the currency in Viracles city</p>
-              <p>We will start with a supply of 5,000,000 $VIRC</p>
-              <p>Earnable by staking your Viracles</p>
-            </div>
-            <div className="faq_wrapper--item">
-              <h3>2. How much can I earn by staking One Viracle? </h3>
-              <p>3/1  ~ 3/10 : 100 $VIRC / day</p>
-              <p>3/11 ~ 3/20 :  50 $VIRC / day</p>
-              <p>3/21 ~ 3/31 :  20 $VIRC / day</p>
-              <p>  3/31 ~    :   5 $VIRC / day</p>
-            </div>
-            <div className="faq_wrapper--item">
-              <h3>3. When will the token launch ?  </h3>
-              <p>1st of March 2022 </p>
-              <p> Sale Price : 2 VET </p>
-              <p> Supply: 5,000,000 $VIRC </p>
-              
-              <h4>What wallet should I use when purchasing ?</h4>
-              <p>Our D-app will be integrated in the Sync browser, this means you can use Vethor wallet (mobile devices) or Sync2 wallet (desktopusers). </p>
-            </div>
-            <div className="faq_wrapper--item">
-              <h3>4. Minting Date & Prices ?  </h3>
-              <h4>First Mint (1500 Viracles)</h4>
-              <p> Mint Price : 1000 VET </p>
-              <p> Mint Date: 26th of Febrary 2022 12 UTC + 0</p>
-
-              <h4>Second Mint (8500 Viracles)</h4>
-              <p> Mint Price : 500 $VIRC (1000 VET) </p>
-              <p> Mint Date: 20th of March 2022 12 UTC + 0</p>
-            </div>
-          </div>
-          <div className="stone"><a href="https://discord.gg/95fu79Ak" target="_blank" className="btn">Join Discord</a></div>
-        </div>
-      </section>
-      <Footer />
-    </>
-  );
+            </section>
+            <div className="footer"></div>
+        </div>    
+    )
 }
 
-export default App;
+export default Mint

@@ -1,0 +1,65 @@
+.navbar {
+  @apply absolute top-0 left-0 w-full flex justify-between items-center px-8 py-8 md:px-16;
+
+  .logo {
+    @apply hidden sm:block text-4xl text-white font-black uppercase;
+  }
+
+  .nav {
+    @apply flex list-none items-center gap-7;
+
+    @media (max-width: 900px) {
+      display: none;
+    }
+    .nav-item {
+      @apply text-xl uppercase leading-normal text-white;
+      color: #fdda33;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #d6b613;
+      }
+    }
+  }
+
+  .btn-primary {
+    @apply hidden sm:block;
+  }
+
+  .hamburger-react {
+    @apply top-8 right-4 rounded z-50;
+    position: fixed !important;
+    background: rgba(153, 153, 153, 0.32);
+
+    @media (min-width: 901px) {
+      display: none;
+    }
+  }
+}
+
+.hamburger-menu {
+  @apply fixed h-full top-0 left-0 pt-10 pb-0 px-6 text-xl z-50;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #4e465a;
+  width: 200px;
+  z-index: 100000;
+  transition: all 0.5s ease 0s;
+
+  @media (min-width: 901px) {
+    display: none;
+  }
+
+  li {
+    padding: 1rem;
+  }
+  a {
+    color: #fff;
+    transition: all ease 0.3s;
+
+    &:hover {
+      color: #999;
+    }
+  }
+}

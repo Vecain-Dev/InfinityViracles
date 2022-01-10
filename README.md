@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Getting Started with InfinityViracles
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/Vecain-Dev/InfinityViracles.git).
 
 ## Available Scripts
 
