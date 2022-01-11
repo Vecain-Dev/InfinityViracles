@@ -3209,6 +3209,11 @@ cliui@^6.0.0:
     strip-ansi "^6.0.0"
     wrap-ansi "^6.2.0"
 
+clsx@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.1.1.tgz#98b3134f9abbdf23b2663491ace13c5c03a73188"
+  integrity sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==
+
 co@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
@@ -8983,6 +8988,14 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
+react-loading-spin@^2.1.9:
+  version "2.1.9"
+  resolved "https://registry.yarnpkg.com/react-loading-spin/-/react-loading-spin-2.1.9.tgz#bfc3e139fa56e275093e24528e70009d89019237"
+  integrity sha512-dU2dEoH+wER6VGY7Lh1OVoECnXNMifvkpsjoxoWth0DXMO9kQl1qYvm8OsXBg/qE+DspCLQRAQtZYZtGy8vajw==
+  dependencies:
+    react "^17.0.2"
+    react-dom "^17.0.2"
+
 react-refresh@^0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
@@ -9073,6 +9086,13 @@ react-slideshow-with-pagination@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/react-slideshow-with-pagination/-/react-slideshow-with-pagination-1.0.2.tgz#c5cd853ba51508fa86d5bb62cf1d3a66e95d8d3f"
   integrity sha512-1FGo+Rdj/y7r5WIak5cNtqXQ/F2ZVhEWGArhwHy2RMH/KikcHijpLq2ivNfNAiOQYCwR6rqM9Cu5ZJEf4v80hA==
+
+react-toastify@^8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-8.1.0.tgz#acaca4e8c4415c8474562dd84a14e6f390ed7f17"
+  integrity sha512-M+Q3rTmEw/53Csr7NsV/YnldJe4c7uERcY7Tma9mvLU98QT2VhIkKwjBzzxZkJRk/oBKyUAtkyMjMgO00hx6gQ==
+  dependencies:
+    clsx "^1.1.1"
 
 react@^17.0.2:
   version "17.0.2"
@@ -10284,6 +10304,16 @@ svgo@^1.0.0, svgo@^1.2.2:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+sweetalert2-react-content@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/sweetalert2-react-content/-/sweetalert2-react-content-4.2.0.tgz#ab4a6e02e37150dd0ea34d00179ec76952e3f442"
+  integrity sha512-eB324swnq10UJH8nAH2S6GHuAKDgH6GpGU8vI+ulYdmlPzpb0T5QPc7O4RFNRx28GzVZUnfvtpxZbKtZ5/KOnQ==
+
+sweetalert2@^11.3.4:
+  version "11.3.4"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.3.4.tgz#6c733efb6f00dae4cc5cae91ba1a86edba12e906"
+  integrity sha512-o7owEtVtpqnB8y3BDCRn2taYb7URcf6RIUm120LjFxt8IHfPIm0UeHuiS3nEp5r9RKm5GlSSJOh/yuapUQcYcQ==
 
 symbol-tree@^3.2.4:
   version "3.2.4"

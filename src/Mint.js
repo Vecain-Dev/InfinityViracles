@@ -5,7 +5,9 @@ import Navbar from './components/Navbar'
 import { Link } from 'react-router-dom'
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
-import SlideshowWithPagination from "react-slideshow-with-pagination";
+// import SlideshowWithPagination from "react-slideshow-with-pagination";
+import { ToastContainer, toast } from "react-toastify"
+import { errorAlert, warningAlert } from './components/toastGroup.js';
 
 
 const CARDS_DETAILS = [
@@ -97,6 +99,13 @@ const assets = [
   
 ];
 
+const errors = [
+  /*0*/ "The wrong network, please switch to the Cronos network.",
+  /*1*/  "First, you should connect it with your wallet.",
+  /*2*/  "Your balance is not enough.",,
+  /*3*/  "Oops. We find the unknown error. Please try again.",
+ ]
+
 const Mint = () => {
     const [input, setInput] = useState(1);
     const price = 1000;
@@ -125,6 +134,10 @@ const Mint = () => {
       setInput(10);
     };
 
+    const handleConnect = () => {
+      warningAlert('This button would be activated when the first sale started')
+    }
+
     // const [assets, setAssets] = useState(assets);
 
     return (
@@ -147,7 +160,7 @@ const Mint = () => {
                            {/* <li><a>WALLET CONNCECT</a></li> */}
                        </ul>
                        <svg width="52" height="56" viewBox="0 0 52 56" fill="none">
-                        <a target="_blank">
+                        <a href="https://discord.gg/K6BFkSDN" target="_blank">
                           <g filter="url(#filter0_d_71:6434)">
                             <circle cx="26" cy="26" r="26" fill="#9CB0FF" />
                           </g>
@@ -180,7 +193,7 @@ const Mint = () => {
                         </a>
                       </svg>
                       <svg width="52" height="56" viewBox="0 0 52 56" fill="none">
-                        <a target="_blank">
+                        <a href="https://twitter.com/ViraclesNFT" target="_blank">
                           <g filter="url(#filter0_d_183:24)">
                             <circle cx="26" cy="26" r="26" fill="#8EDCFF" />
                           </g>
@@ -202,7 +215,7 @@ const Mint = () => {
                           </defs>
                         </a>
                       </svg>
-                      <span className="wallet-connect">wallet connect</span>
+                      <span className="wallet-connect" onClick={handleConnect}>wallet connect</span>
                     </div>
                 </div> 
             </div>
@@ -250,7 +263,8 @@ const Mint = () => {
                   <div className="no-assets" >You should first connect to wallet.</div>
                 {/* <AliceCarousel 
                   mouseTracking
-                   responsive={responsive}
+                   r
+                   esponsive={responsive}
                     // disableDotsControls
                     disableButtonsControls
                 >
@@ -281,6 +295,7 @@ const Mint = () => {
               </div>
             </section>
             <div className="footer"></div>
+            <ToastContainer style={{ fontSize: 15, padding: "5px !important", lineHeight: "15px" }} />
         </div>    
     )
 }

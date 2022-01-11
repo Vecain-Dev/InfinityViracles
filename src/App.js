@@ -22,7 +22,7 @@ const App = ()=>  {
                   <ul>
                     <li>
                       <svg width="52" height="56" viewBox="0 0 52 56" fill="none">
-                        <a target="_blank">
+                        <a href="https://discord.gg/K6BFkSDN" target="_blank">
                           <g filter="url(#filter0_d_71:6434)">
                             <circle cx="26" cy="26" r="26" fill="#9CB0FF" />
                           </g>
@@ -58,7 +58,7 @@ const App = ()=>  {
                     </li>
                     <li>
                       <svg width="52" height="56" viewBox="0 0 52 56" fill="none">
-                        <a target="_blank">
+                        <a href="https://twitter.com/ViraclesNFT" target="_blank">
                           <g filter="url(#filter0_d_183:24)">
                             <circle cx="26" cy="26" r="26" fill="#8EDCFF" />
                           </g>

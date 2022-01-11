@@ -1005,3 +1005,12 @@ section.assets {
   background: rgba(255, 255, 255, 0.2);
   padding: 5px;
 }
+
+@media (min-width: 767px ) {
+  .wrapper .hamburger-react {
+    display: none;
+
+  }
+}
+
+
