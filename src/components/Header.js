@@ -1,19 +1,27 @@
-import React from 'react'
+import React, {useState } from 'react';
 import { Link } from 'react-router-dom'
+import Hamburger from 'hamburger-react';
+import './Navbar.scss';
 
 const Header = () => {
-    return (
-        <header>
-          <div className="hamburger-menu">
-            <input id="menu_toggle" type="checkbox" />
+   const [isOpen, setOpen] = useState(false);
 
-            <ul className="menu_box" id="menu_box">
+      const Navigation = () => (
+        <nav className='hamburger-menu'>
+            <ul>
               <li><a href="#lore" >Lore</a></li>
               <li><a href="#about" >About</a></li>
               <li><a href="#roadmap">Roadmap</a></li>
               <li><a href="#faq">FAQ</a></li>
               <li><a href="#team">Team</a></li>
-            </ul>
+          </ul>
+      </nav>
+    );
+
+    return (
+        <header>
+          <div className="menu-icon">
+             <Hamburger toggled={isOpen} toggle={setOpen} color='#fff' />
           </div>
           <div className="menu_desk">
             <ul className="menu_desk--left">
@@ -26,6 +34,7 @@ const Header = () => {
               </li>
             </ul>
           </div>
+          {isOpen && <Navigation />}
         </header>
     )
 }

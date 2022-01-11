@@ -40,18 +40,17 @@ header .logo {
   width: 12rem;
 }
 
-header ul {
+.menu_desk ul {
   align-items: center;
   display: flex;
   margin: 0;
   padding: 0;
 }
 
-header ul li:not(:last-child) {
+.menu_desk ul li:not(:last-child) {
   margin-right: 49px;
 }
-
-header ul li {
+.menu_desk ul li {
   list-style-type: none;
   /* transition: .4s; */
 }
@@ -500,7 +499,7 @@ footer .footer-bottom ul:first-child {
       width:768px;
   }
   header ul li a {
-      font-size: 26px;
+      font-size: 20px;
   }
   .lore h2 span {
       display: none;
@@ -993,4 +992,16 @@ section.assets {
 
 .mint-date {
   font-size: 1.8rem;
+}
+
+
+.menu-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border-radius: 50%;
+  border: 2 px solid #fff;
+  z-index: 1000000;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px;
 }

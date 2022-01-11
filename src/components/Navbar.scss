@@ -28,8 +28,8 @@
 
   .hamburger-react {
     @apply top-8 right-4 rounded z-50;
-    position: fixed !important;
-    background: rgba(153, 153, 153, 0.32);
+    // position: fixed !important;
+    // background: rgba(153, 153, 153, 0.32);
 
     @media (min-width: 901px) {
       display: none;
@@ -42,10 +42,23 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: #4e465a;
-  width: 200px;
+  background: #2b1b4e;
+  // background: linear-gradient(
+  //   2deg
+  //   , #20123e, #442191);
+  width: 58%;
+  height: 100%;
   z-index: 100000;
   transition: all 0.5s ease 0s;
+  text-align: center;
+  font-size: 25px;
+  opacity: 0.9;
+
+  a {
+    font-size: 20px !important;
+    font-family: "Inter",sans-serif !important;
+    font-weight: bold;
+  }
 
   @media (min-width: 901px) {
     display: none;

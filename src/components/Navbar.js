@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, {useState } from 'react';
 import { Link } from "react-router-dom";
 import Hamburger from 'hamburger-react';
 import './Navbar.scss';
@@ -24,7 +24,9 @@ const Navbar = () => {
       <div className='navbar'>
         {/* <Button className='btn-primary' route='/mint' title='Minting available on XX/XX' />
         <Button className='btn-primary' route='/mint' title='Mint' /> */}
-        <Hamburger toggled={isOpen} toggle={setOpen} color='#fff' />
+        <div className="menu-icon">
+             <Hamburger toggled={isOpen} toggle={setOpen} color='#fff' />
+          </div>
       </div>
 
       {isOpen && <Navigation />}
