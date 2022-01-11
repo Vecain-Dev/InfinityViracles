@@ -12,8 +12,11 @@ const Header = () => {
               <li><a href="#lore" >Lore</a></li>
               <li><a href="#about" >About</a></li>
               <li><a href="#roadmap">Roadmap</a></li>
-              <li><a href="#faq">FAQ</a></li>
               <li><a href="#team">Team</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li>
+                  <Link to="/mint">mint</Link>
+              </li>
           </ul>
       </nav>
     );
@@ -28,6 +31,7 @@ const Header = () => {
               <li><a href="#lore">Lore</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#roadmap">Roadmap</a></li>
+              <li><a href="#team">Team</a></li>
               <li><a href="#faq">FAQ</a></li>
               <li>
                   <Link to="/mint">mint</Link>

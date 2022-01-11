@@ -260,7 +260,7 @@ const Mint = () => {
               <div className="container">
               
                 <div className="assets-list">
-                  <div className="no-assets" >You should first connect to wallet.</div>
+                  <div className="no-assets" >You should connect wallet first to see your Viracles.</div>
                 {/* <AliceCarousel 
                   mouseTracking
                    r
