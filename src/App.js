@@ -2,10 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react'
 import Header from './components/Header'
-import Footer from './components/Footer'  
+import Footer from './components/Footer'
 import { Link } from 'react-router-dom';
 
-const App = ()=>  {
+const App = () => {
   return (
     <>
 
@@ -40,7 +40,7 @@ const App = ()=>  {
                             fill="black" mask="url(#path-2-outside-1_71:6434)" />
                           <defs>
                             <filter id="filter0_d_71:6434" x="0" y="0" width="52" height="56" filterUnits="userSpaceOnUse"
-                              >
+                            >
                               <feFlood floodOpacity="0" result="BackgroundImageFix" />
                               <feColorMatrix in="SourceAlpha" type="matrix"
                                 values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
@@ -97,7 +97,7 @@ const App = ()=>  {
           <h2>The lore <span></span></h2>
           <p className="f-p">
             1500 pretty dragons live in a beautiful and peaceful village.
-            One day, they noticed that the VMonsters will attack their village to plunder ViraCoins  
+            One day, they noticed that the VMonsters will attack their village to plunder ViraCoins
             that is the treasure of their village. So, they appear as the Viracles-miracle soldiers against the VMonsters's plunder!
             To prevent the invasion of the enemy, Viracles mine ViraCoins and start conscription.
           </p>
@@ -216,9 +216,9 @@ const App = ()=>  {
                   <h3>Winter</h3>
                   <p>(Discord: winter#9944)</p>
                 </div>
-                
+
               </div>
-              
+
             </div>
             <div className="team_wrapper--item">
               <img src="assets/images/t-3.png" className="" alt="" />
@@ -229,10 +229,10 @@ const App = ()=>  {
                   <h3>Cryptovs Babylon</h3>
                   <p>(Discord: Cryptovs Babylon#0420)</p>
                 </div>
-              
+
 
               </div>
-            
+
             </div>
             <div className="team_wrapper--item">
               <img src="assets/images/t-4.png" className="" alt="" />
@@ -243,10 +243,10 @@ const App = ()=>  {
                   <h3>Raj Patel</h3>
                   <p>(Discord: ! Raj Patel#6920)</p>
                 </div>
-              
+
 
               </div>
-            
+
             </div>
           </div>
         </div>
@@ -265,15 +265,16 @@ const App = ()=>  {
               <h3>2. How much can I earn by staking One Viracle? </h3>
               <p>3/1  ~ 3/10 : 100 $VIRC / day</p>
               <p>3/11 ~ 3/20 :  50 $VIRC / day</p>
-              <p>3/21 ~ 3/31 :  20 $VIRC / day</p>
+              <p>3/21 ~ 3/30 :  20 $VIRC / day</p>
               <p>  3/31 ~    :   5 $VIRC / day</p>
             </div>
             <div className="faq_wrapper--item">
               <h3>3. When will the token launch ?  </h3>
               <p>1st of March 2022 </p>
               <p> Sale Price : 2 VET </p>
-              <p> Supply: 5,000,000 $VIRC </p>
-              
+              <p> Pre-Mint Supply : 5,000,000 </p>
+              <p>Total Supply: 50,000,000</p>
+
               <h4>What wallet should I use when purchasing ?</h4>
               <p>Our D-app will be integrated in the Sync browser, this means you can use Vethor wallet (mobile devices) or Sync2 wallet (desktopusers). </p>
             </div>
@@ -285,7 +286,7 @@ const App = ()=>  {
 
               <h4>Second Mint (8500 Viracles)</h4>
               <p> Mint Price : 500 $VIRC (1000 VET) </p>
-              <p> Mint Date: 20th of March 2022 12 UTC + 0</p>
+              <p> Mint Date: 10th of March 2022 12 UTC + 0</p>
             </div>
           </div>
           <div className="stone"><a href="https://discord.gg/95fu79Ak" target="_blank" className="btn">Join Discord</a></div>
